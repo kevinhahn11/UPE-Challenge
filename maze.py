@@ -73,7 +73,7 @@ def solveMaze(coord):
         visited[x][y] = 1
         for direction in myDirections:
             [a, b] = determineLocation(x, y, direction)
-            if isValid(a, b):
+            if isValid(a, b) and visited[a][b] == 0:
                 result = makeMove(direction)
                 if result == "END":
                     return True
